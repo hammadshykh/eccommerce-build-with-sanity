@@ -46,6 +46,7 @@ export async function POST(req: NextRequest) {
    const order = await createOrderInSanity(session);
    console.log("Order created in sanity", order);
   } catch (error) {
+   console.log(error);
    toast({
     variant: "destructive",
     title: "Order creating",

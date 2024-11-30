@@ -12,6 +12,32 @@
  * ---------------------------------------------------------------------------------
  */
 
+export type Order = {
+ _id: string; // Unique identifier for the order
+ _type: string; // Order type
+ _createdAt: string; // Timestamp of order creation
+ _updatedAt: string; // Timestamp of last order update
+ orderNumber: string; // Unique order number
+ customerName: string; // Customer's name
+ email: string; // Customer's email address
+ orderDate: string; // Date of the order
+ currency: string; // Currency used for the order (e.g., "gbp")
+ total_price: number; // Total order price
+ amountDiscount: number; // Discount applied (if any)
+ status: string; // Payment status (e.g., "paid")
+ stripeCustomerId: string; // Stripe customer ID
+ stripeCheckoutSessionId: string; // Stripe checkout session ID
+ stripePaymentIntentId: string; // Stripe payment intent ID
+ clerkUserId: string; // Clerk user ID
+ products: ProductInOrder[]; // Array of products in the order
+};
+
+type ProductInOrder = {
+ product: Product; // Product details
+ quantity: number; // Quantity of the product in the order
+ _key: string; // Unique key for the product in the order
+};
+
 // Source: schema.json
 export type SanityImagePaletteSwatch = {
  _type: "sanity.imagePaletteSwatch";

@@ -6,7 +6,7 @@ import ProductsView from "@/components/ProductsView";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 
-export default async function Home() {
+export default async function Product() {
  const products = await getAllProducts();
  const categories = await getAllCategories();
  const featuredProducts = products.slice(0, 4); // Assuming you want to feature the first 4 products
