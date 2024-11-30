@@ -8,13 +8,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Product } from "@/sanity.types";
 
 interface BasketItemProps {
+ addBtn?: boolean;
  item: {
   product: Product;
   quantity: number;
  };
 }
 
-export default function BasketItem({ item }: BasketItemProps) {
+export default function BasketItem({ item, addBtn }: BasketItemProps) {
  const router = useRouter();
 
  return (
@@ -45,7 +46,7 @@ export default function BasketItem({ item }: BasketItemProps) {
      </div>
     </div>
     <div className="flex items-center ml-4 flex-shrink-0">
-     <AddToBasketButton product={item.product} />
+     {addBtn == true && <AddToBasketButton product={item.product} />}
     </div>
    </CardContent>
   </Card>
