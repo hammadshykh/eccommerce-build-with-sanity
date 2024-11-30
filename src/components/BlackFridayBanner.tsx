@@ -13,7 +13,7 @@ const BlackFridayBanner = async () => {
      <p className="text-sm">{sale.description}</p>
     </div>
     <div className="bg-white text-black py-2 px-4 rounded-full text-sm font-semibold">
-     Use Code: <span className="text-red-600">{sale.couponCode}</span> for{" "}
+     Use Code: <span className="text-red-600">{sale.couponCode}</span> for
      {sale.discountAmmount}% off
     </div>
    </div>
